@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CifraCatolica</string>
+    <string name="home">Home</string>
+    <string name="cifra_cat_lica">Cifra Católica</string>
+    <string name="santa_f_de_minas_mg">Santa Fé de Minas - MG</string>
+    <string name="_1_0">1.0</string>
+    <string name="par_quia_nossa_senhora_da_concei_o">Paróquia Nossa Senhora da Conceição</string>
+    <string name="cifra_ncat_lica">Cifra\nCatólica</string>
+    <string name="listas_recentes">Listas Recentes</string>
+    <string name="m_sicas_recentes">Músicas Recentes</string>
+    <string name="listas">Listas</string>
+    <string name="pesquisar">Pesquisar</string>
+</resources>
