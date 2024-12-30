@@ -12,15 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CifraCatolica"
         tools:targetApi="31">
-        <activity
-            android:name=".NewCifra"
-            android:exported="false" />
-        <activity
-            android:name=".CifraPage"
-            android:exported="false" />
-        <activity
-            android:name=".SalvarCifra"
-            android:exported="false" /> <!-- Main Activity -->
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -49,6 +42,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AllCifras"
+            android:exported="false" />
+        <activity
+            android:name=".NewCifra"
+            android:exported="false" />
+        <activity
+            android:name=".CifraPage"
+            android:exported="false" />
+
     </application>
 
 </manifest>

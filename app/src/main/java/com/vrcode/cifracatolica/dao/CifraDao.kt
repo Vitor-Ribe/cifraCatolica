@@ -14,4 +14,10 @@ interface CifraDao {
 
     @Delete
     suspend fun deletar(cifra: Cifra)
+
+    @Query("SELECT * FROM cifras")
+    fun getAllCifras(): List<Cifra>
+
+    @Delete
+    fun delete(cifra: Cifra)
 }
