@@ -36,11 +36,19 @@ class AllCifras : AppCompatActivity() {
         loadCifras()
     }
 
+    // Carregar as cifras utilizando Coroutine
     private fun loadCifras() {
-        val cifras = database.cifraDao().getAllCifras()
-        adapter.updateData(cifras)
+        lifecycleScope.launch {
+            // Usar Dispatchers.IO para operação de leitura do banco de dados
+            val cifras = withContext(Dispatchers.IO) {
+                database.cifraDao().getAllCifras()
+            }
+            // Atualizar a lista na UI thread
+            adapter.updateData(cifras)
+        }
     }
 
+    // Mostrar a confirmação de exclusão
     private fun showDeleteConfirmation(cifra: Cifra) {
         AlertDialog.Builder(this)
             .setTitle("Excluir Cifra")
@@ -52,15 +60,16 @@ class AllCifras : AppCompatActivity() {
             .show()
     }
 
+    // Excluir a cifra
     private fun deleteCifra(cifra: Cifra) {
-        // Remover do banco de dados
-        Thread {
-            database.cifraDao().delete(cifra)
-            runOnUiThread {
-                loadCifras() // Atualizar a lista
-                Toast.makeText(this, "Cifra excluída", Toast.LENGTH_SHORT).show()
+        lifecycleScope.launch {
+            // Usar Dispatchers.IO para operação de exclusão no banco de dados
+            withContext(Dispatchers.IO) {
+                database.cifraDao().delete(cifra)
             }
-        }.start()
+            // Atualizar a UI após a exclusão
+            loadCifras()
+            Toast.makeText(this@AllCifras, "Cifra excluída", Toast.LENGTH_SHORT).show()
+        }
     }
 }
-

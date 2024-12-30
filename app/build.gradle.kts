@@ -91,4 +91,8 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:$room_version")
+
+    // Dependências para Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1") // Para usar lifecycleScope com coroutines
 }
