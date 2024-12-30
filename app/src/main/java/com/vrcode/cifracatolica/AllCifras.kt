@@ -1,6 +1,7 @@
 package com.vrcode.cifracatolica
 
 import CifrasAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -14,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class AllCifras : AppCompatActivity() {
     private lateinit var adapter: CifrasAdapter
     private lateinit var database: AppDatabase
@@ -25,13 +27,20 @@ class AllCifras : AppCompatActivity() {
         database = AppDatabase.getInstance(this)
 
         // Configurar RecyclerView e Adapter
-        adapter = CifrasAdapter(emptyList()) { cifra ->
+        adapter = CifrasAdapter(emptyList(), { cifra ->
+            // Clique curto - Abre a cifra
+            val intent = Intent(this, VisualizaCifra::class.java)
+            intent.putExtra("CIFRA_ID", cifra.id) // Passar o ID da cifra
+            startActivity(intent)
+        }, { cifra ->
+            // Clique longo - Exibe a confirmação de exclusão
             showDeleteConfirmation(cifra)
-        }
+        })
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewCifras)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
+
 
         loadCifras()
     }

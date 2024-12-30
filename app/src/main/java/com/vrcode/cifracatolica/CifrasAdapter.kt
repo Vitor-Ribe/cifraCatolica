@@ -9,7 +9,8 @@ import com.vrcode.cifracatolica.model.Cifra
 
 class CifrasAdapter(
     private var cifras: List<Cifra>,
-    private val onItemLongClick: (Cifra) -> Unit // Callback para clique longo
+    private val onClick: (Cifra) -> Unit,
+    private val onLongClick: (Cifra) -> Unit // Adicionando a função para o click longo
 ) : RecyclerView.Adapter<CifrasAdapter.CifraViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CifraViewHolder {
@@ -22,10 +23,15 @@ class CifrasAdapter(
         val cifra = cifras[position]
         holder.bind(cifra)
 
-        // Detectar clique longo
+        // Clique curto: Abre a cifra
+        holder.itemView.setOnClickListener {
+            onClick(cifra)
+        }
+
+        // Clique longo: Exibe a confirmação de exclusão
         holder.itemView.setOnLongClickListener {
-            onItemLongClick(cifra)
-            true
+            onLongClick(cifra)
+            true // Retorna true para indicar que o evento foi consumido
         }
     }
 

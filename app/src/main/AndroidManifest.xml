@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CifraCatolica"
         tools:targetApi="31">
-
+        <activity
+            android:name=".VisualizaCifra"
+            android:exported="false" />
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
@@ -51,7 +53,6 @@
         <activity
             android:name=".CifraPage"
             android:exported="false" />
-
     </application>
 
 </manifest>

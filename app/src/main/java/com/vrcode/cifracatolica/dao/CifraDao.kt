@@ -20,4 +20,7 @@ interface CifraDao {
 
     @Delete
     fun delete(cifra: Cifra)
+
+    @Query("SELECT * FROM cifras WHERE id = :id")
+    fun getCifraById(id: Int): Cifra?
 }
