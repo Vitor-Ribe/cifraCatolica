@@ -10,4 +10,6 @@
     <string name="m_sicas_recentes">Músicas Recentes</string>
     <string name="listas">Listas</string>
     <string name="pesquisar">Pesquisar</string>
+    <string name="cifras">Cifras</string>
+    <string name="cifrapage">CifraPage</string>
 </resources>
