@@ -12,9 +12,6 @@ interface CifraDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(cifras: List<Cifra>)
 
-    @Query("SELECT * FROM cifras")
-    suspend fun listarTodas(): List<Cifra>
-
     @Delete
     suspend fun deletar(cifra: Cifra)
 
