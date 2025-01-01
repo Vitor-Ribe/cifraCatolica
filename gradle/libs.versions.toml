@@ -12,6 +12,7 @@ constraintlayout = "2.2.0"
 material = "1.12.0"
 appcompat = "1.6.1"
 activity = "1.9.3"
+firebaseCrashlyticsBuildtools = "3.0.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

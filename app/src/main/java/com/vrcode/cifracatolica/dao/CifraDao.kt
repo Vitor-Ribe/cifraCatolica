@@ -9,6 +9,9 @@ interface CifraDao {
     @Insert
     suspend fun inserir(cifra: Cifra)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(cifras: List<Cifra>)
+
     @Query("SELECT * FROM cifras")
     suspend fun listarTodas(): List<Cifra>
 
