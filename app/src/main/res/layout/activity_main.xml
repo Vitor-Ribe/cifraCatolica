@@ -55,9 +55,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="monospace"
-        android:text="@string/_1_0"
+        android:text="1.1"
         android:textAlignment="center"
         android:textColor="@color/beige"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

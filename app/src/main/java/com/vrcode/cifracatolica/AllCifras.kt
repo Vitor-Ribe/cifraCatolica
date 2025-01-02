@@ -1,6 +1,5 @@
 package com.vrcode.cifracatolica
 
-import CifrasAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast

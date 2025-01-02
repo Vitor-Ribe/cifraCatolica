@@ -5,18 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal"
     tools:context=".CifraPage">
 
     <TextView
         android:id="@+id/tituloCifraPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="245dp"
         android:fontFamily="@font/satisfy"
         android:text="Cifras"
-        android:textSize="34sp"
+        android:textSize="60sp"
+        android:textColor="@color/sky_blue"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />
@@ -25,25 +27,26 @@
         android:id="@+id/bt_novaCifra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat"
         android:text="Nova Cifra"
         android:textAlignment="center"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_exibirCifras"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloCifraPage"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/bt_exibirCifras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="100dp"
         android:fontFamily="@font/montserrat"
         android:text="Exibir Todas as Cifras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_novaCifra"
         tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

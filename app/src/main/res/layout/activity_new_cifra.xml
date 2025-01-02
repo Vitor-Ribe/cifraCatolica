@@ -26,6 +26,24 @@
         tools:ignore="Autofill,HardcodedText" />
 
     <EditText
+        android:id="@+id/edCompositorNewCifra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Compositor"
+        android:inputType="text"
+        android:minHeight="48dp"
+        tools:ignore="Autofill,HardcodedText" />
+
+    <EditText
+        android:id="@+id/edCategoriaNewCifra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Categoria"
+        android:inputType="text"
+        android:minHeight="48dp"
+        tools:ignore="Autofill,HardcodedText" />
+
+    <EditText
         android:id="@+id/edTextoCifraNewCifra"
         android:layout_width="match_parent"
         android:layout_height="0dp"

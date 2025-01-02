@@ -24,25 +24,30 @@ class NewCifra : AppCompatActivity() {
         val edtCantor = findViewById<EditText>(R.id.edCantorNewCifra)
         val edtLetra = findViewById<EditText>(R.id.edTextoCifraNewCifra)
         val btnSalvar = findViewById<Button>(R.id.btSalvarNewCifra)
+        val edtCompositor = findViewById<EditText>(R.id.edCompositorNewCifra)
+        val edtCategoria = findViewById<EditText>(R.id.edCategoriaNewCifra)
 
         // Ação ao clicar no botão Salvar
         btnSalvar.setOnClickListener {
             val titulo = edtTitulo.text.toString().trim()
             val cantor = edtCantor.text.toString().trim()
             val letra = edtLetra.text.toString().trim()
+            val compositor = edtCompositor.text.toString().trim()
+            val categoria = edtCategoria.text.toString().trim()
+            val image = "default_image"
 
             if (titulo.isEmpty() || cantor.isEmpty() || letra.isEmpty()) {
                 Toast.makeText(this, "Todos os campos devem ser preenchidos", Toast.LENGTH_SHORT).show()
             } else {
-                salvarCifra(titulo, cantor, letra)
+                salvarCifra(titulo, cantor, letra, compositor, categoria, image)
                 Toast.makeText(this, "Cifra salva com sucesso!", Toast.LENGTH_SHORT).show()
                 finish() // Volta para a tela anterior
             }
         }
     }
 
-    private fun salvarCifra(titulo: String, cantor: String, letra: String) {
-        val novaCifra = Cifra(titulo = titulo, cantor = cantor, letra = letra)
+    private fun salvarCifra(titulo: String, cantor: String, letra: String, compositor: String, categoria: String, image: String) {
+        val novaCifra = Cifra(titulo = titulo, cantor = cantor, letra = letra, compositor = compositor, categoria = categoria, image = image)
 
         GlobalScope.launch {
             val db = DatabaseBuilder.getDatabase(applicationContext)

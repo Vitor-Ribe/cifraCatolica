@@ -8,5 +8,8 @@ data class Cifra(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val titulo: String,
     val cantor: String,
-    val letra: String
+    val letra: String,
+    val compositor: String,
+    val categoria: String,
+    val image: String
 )
